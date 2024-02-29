@@ -41,7 +41,8 @@ app.MapPost("/adduser", async (OauthToken user, QueryShpereDbContext db) =>
 
 app.MapGet("/", async (QueryShpereDbContext db) =>
 {
-    await db.OauthTokens.ToListAsync();
+    var oauthTokens = await db.OauthTokens.ToListAsync();
+    return Results.Ok(oauthTokens);
 });
 
 static void UpdateUserFields(OauthToken existingToken, OauthToken newTokenData)
