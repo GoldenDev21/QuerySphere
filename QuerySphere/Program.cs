@@ -20,8 +20,8 @@ var app = builder.Build();
 
 app.UseHttpsRedirection();
 
-app.MapGet("api/autos", async ([FromServices] QueryShpereDbContext db) => {
-    return await db.;
-});
+// app.MapGet("api/autos", async ([FromServices] QueryShpereDbContext db) => {
+//     return await db.;
+// });
 
 app.Run();
